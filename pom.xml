@@ -135,13 +135,11 @@
                             Finding the right process is a bit tricky. Windows command in the windows profile (below)
                             -->
                         <target>
-                        <exec>
                             <exec executable="bash"
                                   dir="${project.build.directory}"
                                   spawn="false"/>
                             <arg value="-c"/>
                             <arg value="ps ax | grep -Ei '[\-]DtestPort=${http.port}\s+\-jar\s+${project.artifactId}' | awk 'NR==1{print $1}' | xargs kill -SIGTERM"/>
-                        </exec>
                         </target>
                         </configuration>
                     </execution>
