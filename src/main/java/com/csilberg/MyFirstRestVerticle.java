@@ -5,6 +5,7 @@ import io.vertx.core.Future;
 import io.vertx.core.http.HttpServerResponse;
 import io.vertx.core.json.Json;
 import io.vertx.core.json.JsonObject;
+import io.vertx.ext.jdbc.JDBCClient;
 import io.vertx.ext.web.Router;
 import io.vertx.ext.web.RoutingContext;
 import io.vertx.ext.web.handler.BodyHandler;
@@ -18,6 +19,9 @@ public class MyFirstRestVerticle extends AbstractVerticle {
 
     @Override
     public void start(Future<Void> fut) {
+
+        JDBCClient jdbc = JDBCClient.createShared(vertx, config(), "My-Whisky-Collection");
+
         String datetime = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new java.util.Date());
 //        Generate initial data
         createSomeData();

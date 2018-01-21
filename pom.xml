@@ -20,6 +20,17 @@
             <version>3.3.3</version>
         </dependency>
 
+        <!-- for the DB  -->
+        <dependency>
+            <groupId>io.vertx</groupId>
+            <artifactId>vertx-jdbc-client</artifactId>
+            <version>3.1.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.hsqldb</groupId>
+            <artifactId>hsqldb</artifactId>
+            <version>2.3.3</version>
+        </dependency>
         <!-- for the tests -->
         <dependency>
             <groupId>junit</groupId>
